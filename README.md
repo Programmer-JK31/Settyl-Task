@@ -1,4 +1,4 @@
-<H1>**Assignment for Settyl Internship Application**</H1>
+<H1><b>**Assignment for Settyl Internship Application**</b></H1>
 <br>
 <h2>File Structure</h2>
 <li>'templates/index.html' : Contains is file for making a simple webpage to test api endpoints</li>
@@ -7,7 +7,7 @@
 <li>'Settyl_Task.ipynb' : Notebook file of my task</li>
 <li>'Settyl_Task.py' : Python script for task. It was converted to python script from notebook file</li>
 <li>'dataset.json' : JSON file of given dataset</li>
-**Use Settyl_task.py for testing because I have used python script for Api development**
+<b>Use Settyl_task.py for testing because I have used python script for Api development.</b>
 
 <H2>Project Overview</H2>
 The objective of this project is to develop a text classification machine learning model to predict internal status based on external status descriptions based on a given dataset.
