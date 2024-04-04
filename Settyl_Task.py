@@ -195,5 +195,7 @@ y_pred = pipeline.predict(X_test)
 # Evaluating model performance
 accuracy = accuracy_score(y_test, y_pred)
 print("Accuracy:", accuracy)
-
 # Accuracy = 0.9959183673469387
+
+def predictFromInput(External_Status : str):
+    return pipeline.predict([External_Status])[0]
