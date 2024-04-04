@@ -1,4 +1,13 @@
 <H1>**Assignment for Settyl Internship Application**</H1>
+<br>
+<h2>File Structure</h2>
+<li>'templates/index.html' : Contains is file for making a simple webpage to test api endpoints</li>
+<li>'Api_Development.py' : Python script containing the Flask application and route definitions.</li>
+<li>'README.md' : Detailed documentation of my task</li>
+<li>'Settyl_Task.ipynb' : Notebook file of my task</li>
+<li>'Settyl_Task.py' : Python script for task. It was converted to python script from notebook file</li>
+<li>'dataset.json' : JSON file of given dataset</li>
+**Use Settyl_task.py for testing because I have used python script for Api development**
 
 <H2>Project Overview</H2>
 The objective of this project is to develop a text classification machine learning model to predict internal status based on external status descriptions based on a given dataset.
@@ -28,3 +37,15 @@ As accuracy of previous models are too low. I have decided to use GaussianNB mod
 **As a reason I used Random forest alogorithm for classification and I got accuracy = 0.9959183673469387**
 When I have seen dataset X_train and y_train, I analysed that there is only one parameter is passed, so I used logistic regression model. It have better time complexity and lower training time than Random Forest and I got exact same accuracy, which implies that decision boundary between classes is relatively simple and linear.
 <h4>**Final Accuracy of Model = 0.9959183673469387**</h4>
+
+<H2>API Deployment</H2>
+<li>For Api Deployment I have made seperate file named Api_Development.py
+<li>This Flask application provides a simple web interface to predict internal status based on external status input.
+<li>**Endpoints:**
+  <ul><li>'/' Renders the index.html template, which contains a form to input external status and a button to submit the form.
+  <li>'/get_prediction (POST)': Receives the external status input from the form, passes it to the 'predictFromInput' function, and returns the predicted internal status.</ul>
+<li>**Endpoints:**
+<ul><li>Users can input an external status into the form and click the "Predict" button.
+<li>Upon form submission, the external status is sent to the server via a POST request to the /get_prediction endpoint.
+<li>The server processes the input using the predictFromInput function and returns the predicted internal status.
+<li>The predicted internal status is then displayed on the webpage.</ul>
