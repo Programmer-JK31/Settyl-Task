@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Internal Status</title>
+</head>
+<body>
+    <h1>Predict Internal Status</h1>
+    <form id="predictionForm">
+        <label for="externalStatus">Enter External Status:</label>
+        <input type="text" id="externalStatus" name="external_status" required>
+        <button type="submit">Predict</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('predictionForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const externalStatus = document.getElementById('externalStatus').value;
+
+            fetch('/get_prediction', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    'external_status': externalStatus
+                }),
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('result').innerText = `Predicted Internal Status: ${data}`;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
